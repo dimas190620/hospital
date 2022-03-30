@@ -14,7 +14,7 @@ if ($_POST) {
     $pesan_error = "Nama, Username, dan Password diperlukan.";
   } else {
     $result = mysqli_query($conn, "SELECT username FROM pengguna WHERE username='$username'");
-    if (mysqli_fetch_assoc($result)) {
+    if (mysqli_num_rows($result) === 1) {
       $pesan_error = "Username sudah digunakan oleh pengguna lain.";
     } else {
       $password = password_hash($password, PASSWORD_DEFAULT);

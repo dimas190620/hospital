@@ -8,7 +8,6 @@ $pesan_error = "";
 if ($_POST) {
   $username = $_POST['username'];
   $password = $_POST['password'];
-  var_dump($username,$password);
   if (!$username || !$password) {
     $pesan_error = "Username dan password diperlukan.";
   } else {
